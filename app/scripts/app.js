@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('astromo.metrics', [ 'ui.router' ])
-  .config(function ($stateProvider) {
+angular.module('astromo.metrics', [ 'ui.router', 'config' ])
+  .config(function ($stateProvider, metricsPath) {
 
     $stateProvider
       .state('dashboard.metrics', {
         url         : '/metrics',
-        templateUrl : 'vendor/astromo-dashboard-metrics/views/index.html',
+        templateUrl : metricsPath + 'views/index.html',
         controller  : 'metrics.mainController'
       });
 
