@@ -1,0 +1,54 @@
+.dashboard__metrics {
+
+  .chart__loading {
+    font-size: 32px;
+    color: white;
+    background-color: #18BC9C;
+    border-radius: 100%;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    line-height: 68px;
+
+    animation: hour-glass 2s infinite;
+  }
+
+  .chart {
+    position: relative;
+    left: 40px;
+  }
+
+  .chart .y_axis {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    margin-left: -20px;
+    overflow: visible;
+  }
+
+}
+
+@keyframes "hour-glass" {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(180deg);
+  }
+
+  40% {
+    transform: rotate(180deg);
+  }
+
+  60% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
