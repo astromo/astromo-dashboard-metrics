@@ -41,8 +41,8 @@ angular.module('astromo.metrics')
 
           var graph = new Rickshaw.Graph({
             element  : elem.find('#chart__latency')[0],
-            width    : 500,
-            height   : 200,
+            width    : 400,
+            height   : 150,
             renderer : 'area',
             interpolation: 'linear',
             series   : [{
@@ -70,6 +70,18 @@ angular.module('astromo.metrics')
             }
           });
           graph.render();
+
+          // hover detail
+          var hoverDetail = new Rickshaw.Graph.HoverDetail({
+            graph: graph,
+            xFormatter: function(x) {
+              return new Date(x * 1000).toISOString();
+            },
+            yFormatter: function(y) {
+              if (!y) return;
+              return y.toFixed(2) + 'ms';
+            }
+          });
 
           scope.loading = false;
         }
