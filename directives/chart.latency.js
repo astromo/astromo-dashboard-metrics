@@ -39,10 +39,13 @@ angular.module('astromo.metrics')
 
         function render(metrics) {
 
+          var width  = elem.find('.chart__latency').width();
+          var height = elem.find('.chart__latency').height();
+
           var graph = new Rickshaw.Graph({
             element  : elem.find('#chart__latency')[0],
-            width    : 400,
-            height   : 150,
+            width    : width,
+            height   : height,
             renderer : 'area',
             interpolation: 'linear',
             series   : [{
@@ -64,10 +67,8 @@ angular.module('astromo.metrics')
           new Rickshaw.Graph.Axis.Y( {
             graph       : graph,
             orientation : 'left',
+            ticks       : 2,
             element     : elem.find('.y_axis')[0],
-            tickFormat    : function(t) {
-              return t + 'ms';
-            }
           });
           graph.render();
 

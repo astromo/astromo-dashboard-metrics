@@ -15,7 +15,6 @@
 
   .chart {
     position: relative;
-    left: 40px;
   }
 
   .chart .y_axis {
@@ -24,7 +23,12 @@
     bottom: 0;
     width: 40px;
     margin-left: -20px;
-    overflow: visible;
+  }
+
+  .chart__latency {
+    width: 300px;
+    height: 100px;
+    position: absolute;
   }
 
 }
