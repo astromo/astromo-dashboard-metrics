@@ -1,16 +1,27 @@
 .dashboard__metrics {
 
   .chart__loading {
-    font-size: 32px;
+    $loader-size: 48px;
+
+    font-size: $loader-size / 2;
     color: white;
     background-color: #18BC9C;
     border-radius: 100%;
-    width: 64px;
-    height: 64px;
+    width: $loader-size;
+    height: $loader-size;
     text-align: center;
-    line-height: 68px;
+    line-height: $loader-size + 4px;
 
     animation: hour-glass 2s infinite;
+
+    position: absolute;
+
+    left: 50%;
+    margin-left: -($loader-size / 2);
+
+
+    top: 50%;
+    margin-top: -($loader-size / 2);
   }
 
   .chart {
@@ -28,7 +39,6 @@
   .chart__latency {
     width: 300px;
     height: 100px;
-    position: absolute;
   }
 
 }
